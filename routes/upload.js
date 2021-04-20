@@ -16,7 +16,7 @@ cloudinary.config({
 router.post('/upload',(req,res)=>{
     try{
        
-
+      
         if(!req.files || Object.keys(req.files).length===0){
             return res.status(400).send("No files were uploaded ");
 
@@ -37,9 +37,7 @@ router.post('/upload',(req,res)=>{
             removeTmp(file.tempFilePath)
             res.json({public_id : result.public_id, url : result.secure_url})
         })
-        if(req.files.mimetype !== 'image/jpeg' && req.files.mimetype !== 'image/png'){
-            return res.send("format not supported")
-        }   
+        
     }catch(err){
         return res.status(500).json({msg:err.msg});
     }

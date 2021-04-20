@@ -8,7 +8,7 @@ const imageSchema = new mongoose.Schema({
         unique:true
     },
     images : {
-        type : Object,
+        type : String,
         required : true
     }
 });

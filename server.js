@@ -10,9 +10,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cors());
 app.use(cookieParser());
-app.use(fileUpload({
-    useTempFiles:true
-}))
+app.use(fileUpload())
 
 const DB_URL = process.env.DB_URI;
 mongoose.connect(DB_URL,{
